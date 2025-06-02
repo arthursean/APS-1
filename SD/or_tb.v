@@ -5,6 +5,12 @@ module or_tb;
   wire F_sys1;
   ora DUT(.A(A), .B(B), .F(F_sys1));  
   initial begin
+    $dumpfile("graph.vcd");
+    $dumpvars(0, DUT.A);
+  	$dumpvars(0, DUT.B);
+  	$dumpvars(0, DUT.F);
+  end
+  initial begin
     $display("A B | F - Test");
     A = 0;
     B = 0;

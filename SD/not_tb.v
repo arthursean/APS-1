@@ -5,6 +5,11 @@ module not_tb;
   wire F_sys1;
   nota DUT(.A(A), .F(F_sys1));  
   initial begin
+    $dumpfile("graph.vcd");
+    $dumpvars(0, DUT.A);
+  	$dumpvars(0, DUT.F);
+  end
+  initial begin
     $display("A | F - Test");
     A = 0;
     #10;
